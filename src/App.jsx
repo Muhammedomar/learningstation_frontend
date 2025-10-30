@@ -14,7 +14,6 @@ import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login"
 import './index.css'
 import './App.css'
-
 import Home from "./pages/home/Home";
 
 // 🔹 PrivateRoute wrapper (checks login + role)
