@@ -5,12 +5,17 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Login from "../pages/auth/Login";
 // import Register from "../pages/auth/Register";
-import StudentDashboard from "../pages/student/Dashboard";
-import TeacherDashboard from "../pages/teacher/Dashboard";
-import AdminDashboard from "../pages/admin/Dashboard";
-import { AuthProvider, useAuth } from "../context/AuthContext";
+import Sidebar from "./components/Sidebar";
+import TeacherDashboard from "./pages/teacher/Dashboard";
+import AdminDashboard from "./pages/admin/Dashboard";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import Register from "./pages/auth/Register";
+import Login from "./pages/auth/Login"
+import './index.css'
+import './App.css'
+
+import Home from "./pages/home/Home";
 
 // 🔹 PrivateRoute wrapper (checks login + role)
 function PrivateRoute({ children, allowedRole }) {
@@ -37,16 +42,16 @@ export default function App() {
       <Router>
         <Routes>
           {/* Public routes */}
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/register" element={<Register />} />
 
           {/* Student Dashboard (Protected) */}
           <Route
             path="/student/*"
             element={
               <PrivateRoute allowedRole="student">
-                <StudentDashboard />
+                <Sidebar />
               </PrivateRoute>
             }
           />

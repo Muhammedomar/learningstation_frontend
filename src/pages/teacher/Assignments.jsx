@@ -1,3 +1,4 @@
+// frontend/src/pages/teacher/Assignments.jsx
 import React, { useState } from "react";
 // import ChatWidget from "../../components/ChatWidget";
 import {

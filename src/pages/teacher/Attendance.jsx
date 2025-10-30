@@ -1,3 +1,4 @@
+// frontend/src/pages/teacher/Attendance.jsx
 import { useState } from "react";
 import {
   useGetMyCoursesQuery,

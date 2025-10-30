@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetAllAssignmentsReportQuery } from "../../api/adminApi";
 
-const AttendanceReport = () => {
+const AssignmentReport = () => {
   const { data, error, isLoading, refetch } = useGetAllAssignmentsReportQuery();
   const [expanded, setExpanded] = useState(null);
 
@@ -112,4 +112,4 @@ const AttendanceReport = () => {
   );
 };
 
-export default AttendanceReport;
+export default AssignmentReport;
