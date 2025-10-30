@@ -8,16 +8,17 @@ import Students from "../pages/admin/Students";
 import Teachers from "../pages/admin/Teachers";
 import Courses from "../pages/admin/Courses";
 import Attendance from "./Attendance";
+import UserDashboard from "./UserDashboard";
 
 const roleMenus = (user) => ({
   student: [
-    { label: "Dashboard", icon: "🏠", component: <h2>Welcome Student 👋</h2> },
+    { label: "Dashboard", icon: "🏠", component: <UserDashboard user={user} /> },
     { label: "My Courses", icon: "📘", component: <MyCourses /> },
     { label: "Assignments", icon: "📝", component: <Assignments user={user} /> },
     { label: "Attendance", icon: "📊", component: <Attendance user={user} /> },
   ],
   teacher: [
-    { label: "Dashboard", icon: "🏠", component: <h2>Welcome Teacher 👋</h2> },
+    { label: "Dashboard", icon: "🏠", component: <UserDashboard user={user} /> },
     { label: "My Courses", icon: "📘", component: <MyCourses /> },
     { label: "Assignments", icon: "📝", component: <Assignments user={user} /> },
     { label: "Attendance", icon: "📊", component: <Attendance user={user} /> },
@@ -25,7 +26,7 @@ const roleMenus = (user) => ({
     { label: "Manage Meet Link", icon: "🔗", component: <ManageMeetLink /> },
   ],
   admin: [
-    { label: "Dashboard", icon: "🏠", component: <h2>Welcome Admin 👋</h2> },
+    { label: "Dashboard", icon: "🏠", component: <UserDashboard user={user} /> },
     { label: "Students", icon: "👩‍🎓", component: <Students /> },
     { label: "Assignments", icon: "📝", component: <Assignments user={user} /> },
     { label: "Teachers", icon: "👨‍🏫", component: <Teachers /> },
