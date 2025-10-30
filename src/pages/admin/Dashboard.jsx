@@ -179,7 +179,7 @@ import ChatWidget from "../../components/ChatWidget";
 import "./AdminDashboard.css";
 
 // Create a socket here for online-list listening (will be separate from the ChatWidget socket — that's okay)
-const socket = io("http://localhost:5000");
+const socket = io("https://learningstation-kr6z.onrender.com");
 
 export default function AdminDashboard() {
   const links = [

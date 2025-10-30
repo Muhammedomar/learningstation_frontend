@@ -60,7 +60,7 @@ export default function Submissions({ assignmentId }) {
                 {sub.fileUrl ? (
                   <a
                     // href={sub.fileUrl}
-                    href={`http://localhost:5000${sub.fileUrl}`}
+                    href={`https://learningstation-kr6z.onrender.com${sub.fileUrl}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 underline"
