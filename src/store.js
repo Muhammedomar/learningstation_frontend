@@ -1,10 +1,10 @@
 // frontend/src/store.js
 import { configureStore } from "@reduxjs/toolkit";
-import { authApi } from "../api/authApi";
-import authReducer from "../pages/auth/authSlice";
-import { studentApi } from "../api/studentApi";
-import { teacherApi } from "../api/teacherApi";
-import { adminApi } from "../api/adminApi"; // ✅ import this
+import { authApi } from "./api/authApi";
+import authReducer from "./pages/auth/authSlice";
+import { studentApi } from "./api/studentApi";
+import { teacherApi } from "./api/teacherApi";
+import { adminApi } from "./api/adminApi"; // ✅ import this
 export const store = configureStore({
   reducer: {
     auth: authReducer,
