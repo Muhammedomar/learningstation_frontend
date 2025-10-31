@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 // import Register from "../pages/auth/Register";
 import Sidebar from "./components/Sidebar";
-import TeacherDashboard from "./pages/teacher/Dashboard";
-import AdminDashboard from "./pages/admin/Dashboard";
+// import TeacherDashboard from "./pages/teacher/Dashboard";
+// import AdminDashboard from "./pages/admin/Dashboard";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import Register from "./pages/auth/Register";
-import Login from "./pages/auth/Login"
-import './index.css'
-import './App.css'
+import Login from "./pages/auth/Login";
+import "./index.css";
+import "./App.css";
 import Home from "./pages/home/Home";
 
 // 🔹 PrivateRoute wrapper (checks login + role)
@@ -51,26 +51,6 @@ export default function App() {
             element={
               <PrivateRoute allowedRole="student">
                 <Sidebar />
-              </PrivateRoute>
-            }
-          />
-
-          {/* Teacher Dashboard (Protected) */}
-          <Route
-            path="/teacher/*"
-            element={
-              <PrivateRoute allowedRole="teacher">
-                <TeacherDashboard />
-              </PrivateRoute>
-            }
-          />
-
-          {/* Admin Dashboard (Protected) */}
-          <Route
-            path="/admin/*"
-            element={
-              <PrivateRoute allowedRole="admin">
-                <AdminDashboard />
               </PrivateRoute>
             }
           />
