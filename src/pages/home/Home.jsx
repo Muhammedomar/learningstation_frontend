@@ -13,7 +13,7 @@ const Home = () => {
           Access your dashboard based on your role.
         </p>
         <Link to="/login" className="btn-primary inline-flex items-center">
-          Login
+          Login Here
         </Link>
       </div>
     </AuthLayout>
