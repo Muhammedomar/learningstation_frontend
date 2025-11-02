@@ -1,7 +1,17 @@
 import React from "react";
-
+import Navbar from "./Navbar";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 export default function UserDashboard({ user }) {
+  const { logout } = useContext(AuthContext);
+  const nav = useNavigate();
   if (!user) return null;
+
+  const onLogout = () => {
+    logout();
+    nav("/login");
+  };
 
   return (
     <div className="p-6 rounded-lg bg-gray-50 dark:bg-gray-900 shadow-md">
@@ -26,9 +36,13 @@ export default function UserDashboard({ user }) {
           <p>As a teacher, you can create assignments and view submissions.</p>
         )}
         {user.role === "student" && (
-          <p>As a student, you can view courses, submit assignments, and track attendance.</p>
+          <p>
+            As a student, you can view courses, submit assignments, and track
+            attendance.
+          </p>
         )}
       </div>
+      <Navbar title={`Admin • ${user?.name || ""}`} onLogout={onLogout} />
     </div>
   );
 }

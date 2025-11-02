@@ -33,7 +33,7 @@ function PrivateRoute({ children, allowedRole }) {
 
   return children;
 }
-
+console.log("i want to check weather my db is connected");
 export default function App() {
   console.log("App rendered");
   return (
@@ -45,11 +45,28 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Student Dashboard (Protected) */}
+          {/* Student admin teacher Dashboard (Protected) */}
+          <Route
+            path="/admin/*"
+            element={
+              <PrivateRoute allowedRole="admin">
+                <Sidebar />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/student/*"
             element={
               <PrivateRoute allowedRole="student">
+                <Sidebar />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/teacher/*"
+            element={
+              <PrivateRoute allowedRole="teacher">
                 <Sidebar />
               </PrivateRoute>
             }
