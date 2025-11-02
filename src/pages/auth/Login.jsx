@@ -19,6 +19,7 @@ const Login = () => {
   const { login: saveToContext } = useAuth();
 
   const handleSubmit = async (e) => {
+    console.log("i am here when i am logged in");
     e.preventDefault();
     setError("");
     try {
